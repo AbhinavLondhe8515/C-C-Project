@@ -1,0 +1,121 @@
+/*owner : Divyashree A
+creation date :20/12/2022
+modification date :13/01/2023
+Group:LMCPPSQ01      */
+
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+class Truck_booking/*creating a class*/
+{
+
+private:
+/*creating the data variables to store
+ each record  */
+string Tran_ID;
+string Type_of_Truck;
+string Booking_date;
+string Load_pic_date;
+int Capacity;
+float Distance;
+float Total_cost;
+float Miscellaneous_Cost;
+int Status;//(in km)
+string Truck_Number;
+string Driver_Id;
+int area;//area(of product in square meter)
+int Qty_product;
+char del;
+public:
+void Addition()/*creating a Addition function which will be called in main by using an object */
+{
+/*taking the input from the user*/
+cout << "Enter the tran_id" << endl;
+cin >> Tran_ID;
+cout << "Enter the type_of_truck" << endl;
+cin >> Type_of_Truck;
+cout << "Enter the Booking date" << endl;
+cin >> Booking_date;
+cout << "Enter Load_pic date" << endl;
+cin >> Load_pic_date;
+cout << "Enter the capcity" << endl;
+cin >> Capacity;
+cout << "Enter the Distance" << endl;
+cin >> Distance;
+cout << "Enter the Total_cost" << endl;
+cin >> Total_cost;
+cout << "Enter the Miscellaneous_cost" << endl;
+cin >> Miscellaneous_Cost;
+cout << "Enter the Status" << endl;
+cin >> Status;
+cout << "Enter the Truck number" << endl;
+cin >> Truck_Number;
+cout << "Enter the Driver id" << endl;
+cin >> Driver_Id;
+cout << "Enter the area" << endl;
+cin >> area;
+cout << "Enter the product" << endl;
+cin >> Qty_product;
+cout<<"Do you want to delete the booking press 'C' else press 'A'"<<endl;
+cin>>del;
+if(del =='C'||del=='c')
+{
+
+cout<<0<<endl;
+
+}
+if(del=='A'||del=='a')
+{
+
+cout<<1<<endl;
+
+}
+
+fstream myfile;
+
+myfile.open("truckbookingsq11.txt",ios::app);/* opening the file */
+
+myfile<<Tran_ID<<" "<<Type_of_Truck<<" "<<Booking_date<<" "<<Load_pic_date<<" "<<Capacity<<" "<<Distance<<" "<<Total_cost<<" "<<Miscellaneous_Cost<<" "<<Status<<" "<<Truck_Number<<" "<<Driver_Id<<" "<<area<<" "<<Qty_product<<" "<<del<<endl;
+
+myfile.close();/*closing the file*/
+cout<<"Tran_ID:"<<Tran_ID<<endl;
+cout<<"Type_of_Truck:"<<Type_of_Truck<<endl;
+cout<<"Booking_date:"<<Booking_date<<endl;
+cout<<"Load_pic_date:"<<Load_pic_date<<endl;
+cout<<"Capacity:"<<Capacity<<endl;
+cout<<"Distance:"<<Distance<<endl;
+cout<<"Total_cost:"<<Total_cost<<endl;
+cout<<"Miscellaneous_Cost:"<<Miscellaneous_Cost<<endl;
+cout<<"Status:"<<Status<<endl;
+cout<<"Truck_Number:"<<Truck_Number<<endl;
+cout<<"Driver_Id:"<<Driver_Id<<endl;
+cout<<"area:"<<area<<endl;
+cout<<"Qty_product:"<<Qty_product<<endl;
+cout<<"del:"<<del<<endl;
+}
+
+};
+
+int main()
+{
+
+int n,i;
+char del;
+cout<<"Enter the number of trucks"<<endl;//taking the input
+cin>>n;
+Truck_booking tb[n];/*creating the object of Truck_booking class*/
+for(int i=0;i<n;i++)
+{
+
+cout<<"Details of truck booking:"<<i+1<<endl; 
+
+tb[i].Addition(); //calling the "Addition" function present in the Truck_booking class
+
+}
+
+return 0;
+
+}
+
+
