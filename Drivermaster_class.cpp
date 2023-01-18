@@ -98,15 +98,15 @@ public:
 		getline(cin,Driver_Id);
 
 		cout<<"Enter Driver Name"<<endl;
-		cin.ignore;
+		cin>>ignore;
 		getline(cin,Driver_Name);
 
 		cout<<"Enter Driver license No"<<endl;
-		cin.ignore;
+		cin>>ignore;
 		getline(cin,Driver_license_No);
 
 	    cout<<"Enter DOB"<<endl;
-		cin.ignore;
+		cin>>ignore;
 		getline(cin,DOB);
 
 		cout<<"Enter Driver_Charges_per_KM"<<endl;
