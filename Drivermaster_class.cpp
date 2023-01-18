@@ -94,7 +94,7 @@ public:
 		cout<<"Enter the Driver Details:"<<endl; /*Getting driver details*/
 
   		cout<<"Enter Driver Id"<<endl;
-		cin.ignore;
+		cin>>ignore;
 		getline(cin,Driver_Id);
 
 		cout<<"Enter Driver Name"<<endl;
